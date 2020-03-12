@@ -1,25 +1,37 @@
 const describe = require('mocha').describe
-const it = require(mocha).it
-const expect = require(chai).expect
+const it = require('mocha').it
+const expect = require('chai').expect
 const strictEqual= require('../calculation') 
 
 describe ( 'calculation', () =>{
     describe ('strictEqual' , () =>{
-        it('produces true or false when types are same or values are equal ', () => {
+        it('produces true when given two parameters of same type and value  ', () => {
 
-            // create test data 
-            const assert = require ('strictEqual')
+            const result = strictEqual (5,5)
 
-            // call the function
-            assert.strictEqual(10,10,true)
-            assert.strictEqual(10,"10", false)
+            expect(result).to.equal(true)
 
-
-            // make assertion about what should be true
-            expect(assert.strictEqual(10,10,true).to.equal(true))
-            expect(assert.strictEqual(10,"10",false).to.equal(false))
-
+        
         })
+
+        it('produces false when given two parameters of same type and different value', () => {
+
+            const result = strictEqual (5,6)
+
+            expect(result).to.equal(false)
+
+        
+        })
+
+        it('produces false when given two parameters of different type and different value', () => {
+
+            const result = strictEqual (5,'x')
+
+            expect(result).to.equal(false)
+
+        
+        })
+
 
     })
 
