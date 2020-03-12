@@ -33,6 +33,16 @@ describe ( 'calculation', () =>{
         })
 
 
+        it('produces false when given two parameters of different type and same value', () => {
+
+            const result = strictEqual (6,5)
+
+            expect(result).to.equal(false)
+
+        
+        })
+
+
     })
 
 })
